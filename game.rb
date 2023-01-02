@@ -22,6 +22,7 @@ class Codemaker
   end
 
   def player_create_feedback
+    @feedback = []
     feedback.push(gets.chomp) while feedback.length < 4
   end
 
@@ -103,6 +104,7 @@ if human_player == 'setter'
     guesser.clear_guess
     guesser.create_guess_comp(setter.feedback, secret_code.colours)
     setter.clear_feedback
+    p(code)
     p(guesser.guess)
     setter.player_create_feedback
     p(setter.feedback)
